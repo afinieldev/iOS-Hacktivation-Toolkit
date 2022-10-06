@@ -21,7 +21,6 @@ YELLOW="\033[1;33m"
 CYAN="\033[0;36m"
 NC="\e[0m"
 
-
 ###########################
 #ROOT PRIVILEGES
 ###########################
@@ -101,24 +100,31 @@ read -p " Choose >  " ch
 if [ $ch = 1 ]; then
 
 echo "deb https://assets.checkra.in/debian /" | sudo tee -a /etc/apt/sources.list
-apt-key adv --fetch-keys https://assets.checkra.in/debian/archive.key
-apt update
-apt install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
-git clone 'https://github.com/libimobiledevice/libirecovery'
-git clone 'https://github.com/libimobiledevice/libideviceactivation.git'
-git clone 'https://github.com/libimobiledevice/idevicerestore'
-git clone 'https://github.com/libimobiledevice/usbmuxd'
-git clone 'https://github.com/libimobiledevice/libimobiledevice'
-git clone 'https://github.com/libimobiledevice/libusbmuxd'
-git clone 'https://github.com/libimobiledevice/libplist'
-git clone 'https://github.com/rcg4u/iphonessh.git'
-cd ./libplist && ./autogen.sh --without-cython && sudo make install && cd ..
-cd ./libusbmuxd && ./autogen.sh && sudo make install && cd ..
-cd ./libimobiledevice && ./autogen.sh --without-cython && sudo make install && cd ..
-cd ./usbmuxd && ./autogen.sh && sudo make install && cd ..
-cd ./libirecovery && ./autogen.sh && sudo make install && cd ..
-cd ./idevicerestore && ./autogen.sh && sudo make install && cd ..
-cd ./libideviceactivation/ && ./autogen.sh && sudo make && sudo make install && cd ..
+sudo apt-key adv --fetch-keys https://assets.checkra.in/debian/archive.key
+sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
+
+sleep 1
+cd /home/dev/unlock/iOS-Hacktivation-Toolkit
+
+# Download Requirements "Libimobiledebice"
+git clone https://github.com/libimobiledevice/libirecovery
+git clone https://github.com/libimobiledevice/libideviceactivation.git
+git clone https://github.com/libimobiledevice/idevicerestore
+git clone https://github.com/libimobiledevice/usbmuxd
+git clone https://github.com/libimobiledevice/libimobiledevice
+git clone https://github.com/libimobiledevice/libusbmuxd
+git clone https://github.com/libimobiledevice/libplist
+git clone https://github.com/h4ngit/iphonessh.git
+
+# Devicedir
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/libusbmuxd && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/libimobiledevice && ./autogen.sh --without-cython && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/usbmuxd && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/libirecovery && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/idevicerestore && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/libideviceactivation && ./autogen.sh && sudo make && sudo make install -j8 && cd ..
 sudo ldconfig
 continueOrExit
 
@@ -146,7 +152,7 @@ continueOrExit
 
 elif [ $ch = 4 ]; then
 
-bypass_scripts/oc34n_activation_server_13_x/./run.sh
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x && run.sh
 continueOrExit
 
 ###########################
@@ -155,7 +161,7 @@ continueOrExit
 
 elif [ $ch = 5 ]; then
 
-bypass_scripts/mobileactivationd_13_x/./run.sh
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x && bash run.sh
 continueOrExit
 
 ###########################
@@ -164,7 +170,7 @@ continueOrExit
 
 elif [ $ch = 6 ]; then
 
-bypass_scripts/mobileactivationd_12_4_7/./run.sh
+cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7 && bash run.sh
 continueOrExit
 
 ###########################
@@ -175,7 +181,7 @@ elif [ $ch = 7 ]; then
 echo ""
 rm ~/.ssh/known_hosts >/dev/null 2>&1
 pgrep -f 'tcprelay.py' | xargs kill >/dev/null 2>&1
-python iphonessh/python-client/tcprelay.py -t 44:2222 >/dev/null 2>&1 &
+python3 iphonessh/python-client/tcprelay.py -t 44:2222 >/dev/null 2>&1 &
 sleep 2
 sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222 mount -o rw,union,update /
 sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no root@localhost -p 2222
