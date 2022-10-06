@@ -118,13 +118,13 @@ git clone https://github.com/libimobiledevice/libplist
 git clone https://github.com/h4ngit/iphonessh.git
 
 # Devicedir
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/libusbmuxd && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/libimobiledevice && ./autogen.sh --without-cython && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/usbmuxd && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/libirecovery && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/idevicerestore && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/libideviceactivation && ./autogen.sh && sudo make && sudo make install -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libusbmuxd && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libimobiledevice && ./autogen.sh --without-cython && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/usbmuxd && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libirecovery && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/idevicerestore && ./autogen.sh && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libideviceactivation && ./autogen.sh && sudo make && sudo make install -j8 && cd ..
 sudo ldconfig
 continueOrExit
 
