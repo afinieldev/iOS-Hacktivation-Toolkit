@@ -60,7 +60,7 @@ echo " ********************** iOS Hacktivation Toolkit **********************"
 echo -e " **********************************************************************$NC"
 echo -e " [+]$GREEN        This software is maintained by SRS appsec@tuta.io$NC       [+]"
 echo -e " [+]$GREEN    Thanks to$NC :$GREEN @exploit3dguy + @appletech752 + @iRogerosx $NC     [+]"
-echo -e " [+]$GREEN    @SoNick_14 + OC34N Team + Thelittlechicken + iGerman00 $NC     [+]"
+echo -e " [+]$GREEN    @SoNick_14 + OC34N Team + Thelittlechicken + iGerman00 @H4N $NC     [+]"
 
 ActivationState=$(ideviceinfo | grep ActivationState: | awk '{print $NF}')
 DeviceName=$(ideviceinfo | grep DeviceName | awk '{print $NF}')
@@ -152,7 +152,7 @@ continueOrExit
 
 elif [ $ch = 4 ]; then
 
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x && run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x && run.sh
 continueOrExit
 
 ###########################
@@ -161,7 +161,7 @@ continueOrExit
 
 elif [ $ch = 5 ]; then
 
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x && bash run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x && bash run.sh
 continueOrExit
 
 ###########################
@@ -170,7 +170,7 @@ continueOrExit
 
 elif [ $ch = 6 ]; then
 
-cd $HOME/unlock/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7 && bash run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7 && bash run.sh
 continueOrExit
 
 ###########################
