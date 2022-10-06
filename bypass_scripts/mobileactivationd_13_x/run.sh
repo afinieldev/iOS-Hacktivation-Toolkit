@@ -26,15 +26,15 @@ done
 read -p "RETURN TO MENU? [ Y / N ] : " check
 
 if [ $check = "Y" ]; then
-bash hacktivation.sh
+sudo bash hacktivation.sh
 elif [ $check = "y" ]; then
-bash hacktivation.sh
+sudo bash hacktivation.sh
 elif [ $check = "Yes" ]; then
-bash hacktivation.sh
+sudo bash hacktivation.sh
 elif [ $check = "yes" ]; then
-bash hacktivation.sh
+sudo bash hacktivation.sh
 elif [ $check = "YES" ]; then
-bash hacktivation.sh
+sudo bash hacktivation.sh
 else
 exit 1
 fi

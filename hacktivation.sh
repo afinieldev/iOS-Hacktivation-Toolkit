@@ -105,7 +105,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
 
 sleep 1
-cd /home/dev/unlock/iOS-Hacktivation-Toolkit
+cd $HOME//iOS-Hacktivation-Toolkit
 
 # Download Requirements "Libimobiledebice"
 git clone https://github.com/libimobiledevice/libirecovery
