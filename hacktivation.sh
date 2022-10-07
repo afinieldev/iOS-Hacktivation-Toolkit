@@ -132,7 +132,7 @@ sudo ldconfig
 continueOrExit
 
 # Move the compiled files to correct location
-cd $HOME/iOS-Hacktivation-Toolkit/
+cd $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client
 sleep 1
 sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7/
 sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7/
