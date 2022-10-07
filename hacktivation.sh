@@ -136,13 +136,13 @@ cd $HOME/iOS-Hacktivation-Toolkit/mobileactivationd_12_4_7
 git clone https://github.com/afinieldev/iphonessh.git
 
 # Move the compiled files to correct location
-cd $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/
-sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
-sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
-sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x
-sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
-sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x
-sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x
+cd $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client
+sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/mobileactivationd_12_4_7
+sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/mobileactivationd_12_4_7
+sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/mobileactivationd_13_x
+sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/mobileactivationd_12_4_7
+sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/oc34n_activation_server_13_x
+sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client/oc34n_activation_server_13_x
 
 # pip nstall
 pip3 install usbmuxctl
