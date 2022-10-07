@@ -118,7 +118,6 @@ git clone https://github.com/libimobiledevice/usbmuxd
 git clone https://github.com/libimobiledevice/libimobiledevice
 git clone https://github.com/libimobiledevice/libusbmuxd
 git clone https://github.com/libimobiledevice/libplist
-cd $HOME/iOS-Hacktivation-Toolkit/
 git clone https://github.com/afinieldev/iphonessh.git
 
 # Compile the lib
@@ -131,9 +130,6 @@ cd $HOME/iOS-Hacktivation-Toolkit/idevicerestore && sudo bash autogen.sh -prefix
 cd $HOME/iOS-Hacktivation-Toolkit/libideviceactivation && sudo bash autogen.sh -prefix=/usr && sudo make && sudo make install -j8 && cd ..
 sudo ldconfig
 continueOrExit
-
-cd $HOME/iOS-Hacktivation-Toolkit/mobileactivationd_12_4_7
-git clone https://github.com/afinieldev/iphonessh.git
 
 # Move the compiled files to correct location
 cd $HOME/iOS-Hacktivation-Toolkit/iphonessh/python-client
