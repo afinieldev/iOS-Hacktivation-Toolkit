@@ -103,7 +103,7 @@ echo "deb https://assets.checkra.in/debian /" | sudo tee -a /etc/apt/sources.lis
 sudo apt-key adv --fetch-keys https://assets.checkra.in/debian/archive.key
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
-
+sudo apt install python3-pip -y
 sleep 1
 cd $HOME//iOS-Hacktivation-Toolkit
 
@@ -115,7 +115,7 @@ git clone https://github.com/libimobiledevice/usbmuxd
 git clone https://github.com/libimobiledevice/libimobiledevice
 git clone https://github.com/libimobiledevice/libusbmuxd
 git clone https://github.com/libimobiledevice/libplist
-git clone https://github.com/h4ngit/iphonessh.git
+git clone https://github.com/afinieldev/iphonessh.git
 
 # Devicedir
 cd $HOME/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
