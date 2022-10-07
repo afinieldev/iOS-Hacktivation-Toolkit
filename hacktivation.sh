@@ -106,7 +106,7 @@ sudo apt-get install -y python libtool-bin libplist-dev libzip-dev zlib1g-dev op
 sudo apt-get install -y python3-pip
 sudo apt-get install -y libimobiledevice6 usbmuxd libimobiledevice-utils
 sudo apt-get install -y udev
-sudo apt-get install -y doxygen cython
+sudo apt-get install -y doxygen cython systemd
 sleep 1
 cd $HOME/iOS-Hacktivation-Toolkit/
 
@@ -122,13 +122,13 @@ cd $HOME/iOS-Hacktivation-Toolkit/
 git clone https://github.com/afinieldev/iphonessh.git
 
 # Compile the lib
-cd $HOME/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/libusbmuxd && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/libimobiledevice && ./autogen.sh --without-cython && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/usbmuxd && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/libirecovery && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/idevicerestore && ./autogen.sh && sudo make -j8 && cd ..
-cd $HOME/iOS-Hacktivation-Toolkit/libideviceactivation && ./autogen.sh && sudo make && sudo make install -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libplist && autogen.sh -prefix=/usr --without-cython && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libusbmuxd && autogen.sh -prefix=/usr && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libimobiledevice && autogen.sh -prefix=/usr --without-cython && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/usbmuxd && sudo bash autogen.sh -prefix=/usr && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libirecovery && sudo bash autogen.sh -prefix=/usr && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/idevicerestore && sudo bash autogen.sh -prefix=/usr && sudo make -j8 && cd ..
+cd $HOME/iOS-Hacktivation-Toolkit/libideviceactivation && sudo bash autogen.sh -prefix=/usr && sudo make && sudo make install -j8 && cd ..
 sudo ldconfig
 continueOrExit
 
@@ -143,6 +143,10 @@ sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactiv
 sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
 sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x
 sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x
+
+# pip nstall
+pip3 install usbmuxctl
+
 ###########################
 #RESTORE
 ###########################
