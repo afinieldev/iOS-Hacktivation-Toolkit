@@ -115,10 +115,8 @@ git clone https://github.com/libimobiledevice/usbmuxd
 git clone https://github.com/libimobiledevice/libimobiledevice
 git clone https://github.com/libimobiledevice/libusbmuxd
 git clone https://github.com/libimobiledevice/libplist
-<<<<<<< Updated upstream
+cd $HOME/iOS-Hacktivation-Toolkit/
 git clone https://github.com/afinieldev/iphonessh.git
-=======
->>>>>>> Stashed changes
 
 # Compile the lib
 cd $HOME/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
