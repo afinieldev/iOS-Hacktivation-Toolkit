@@ -105,7 +105,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
 sudo apt install python3-pip -y
 sleep 1
-cd $HOME//iOS-Hacktivation-Toolkit
+cd $HOME/iOS-Hacktivation-Toolkit/
 
 # Download Requirements "Libimobiledebice"
 git clone https://github.com/libimobiledevice/libirecovery
@@ -115,9 +115,12 @@ git clone https://github.com/libimobiledevice/usbmuxd
 git clone https://github.com/libimobiledevice/libimobiledevice
 git clone https://github.com/libimobiledevice/libusbmuxd
 git clone https://github.com/libimobiledevice/libplist
+<<<<<<< Updated upstream
 git clone https://github.com/afinieldev/iphonessh.git
+=======
+>>>>>>> Stashed changes
 
-# Devicedir
+# Compile the lib
 cd $HOME/iOS-Hacktivation-Toolkit/libplist && ./autogen.sh --without-cython && sudo make -j8 && cd ..
 cd $HOME/iOS-Hacktivation-Toolkit/libusbmuxd && ./autogen.sh && sudo make -j8 && cd ..
 cd $HOME/iOS-Hacktivation-Toolkit/libimobiledevice && ./autogen.sh --without-cython && sudo make -j8 && cd ..
@@ -127,6 +130,9 @@ cd $HOME/iOS-Hacktivation-Toolkit/idevicerestore && ./autogen.sh && sudo make -j
 cd $HOME/iOS-Hacktivation-Toolkit/libideviceactivation && ./autogen.sh && sudo make && sudo make install -j8 && cd ..
 sudo ldconfig
 continueOrExit
+
+cd $HOME/iOS-Hacktivation-Toolkit/mobileactivationd_12_4_7
+git clone https://github.com/afinieldev/iphonessh.git
 
 ###########################
 #RESTORE
