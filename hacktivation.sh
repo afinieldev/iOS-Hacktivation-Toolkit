@@ -102,8 +102,11 @@ if [ $ch = 1 ]; then
 echo "deb https://assets.checkra.in/debian /" | sudo tee -a /etc/apt/sources.list
 sudo apt-key adv --fetch-keys https://assets.checkra.in/debian/archive.key
 sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install -y python libtool-bin libcurl4-openssl-dev libplist-dev libzip-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
-sudo apt install python3-pip -y
+sudo apt-get install -y python libtool-bin libplist-dev libzip-dev zlib1g-dev openssl libssl-dev  libcurl4-openssl-dev libimobiledevice-dev libusb-1.0-0-dev libreadline-dev build-essential git g++ make autoconf automake libxml2-dev libtool pkg-config checkra1n sshpass checkinstall
+sudo apt-get install -y python3-pip
+sudo apt-get install -y libimobiledevice6 usbmuxd libimobiledevice-utils
+sudo apt-get install -y udev
+sudo apt-get install -y doxygen cython
 sleep 1
 cd $HOME/iOS-Hacktivation-Toolkit/
 
@@ -132,6 +135,12 @@ continueOrExit
 cd $HOME/iOS-Hacktivation-Toolkit/mobileactivationd_12_4_7
 git clone https://github.com/afinieldev/iphonessh.git
 
+# Move the compiled files to correct location
+cd $HOME/iOS-Hacktivation-Toolkit/iphonessh
+sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
+sudo cp -r usbmuxd.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7
+sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x
+sudo cp -r usbmuxd.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x
 ###########################
 #RESTORE
 ###########################
@@ -156,7 +165,7 @@ continueOrExit
 
 elif [ $ch = 4 ]; then
 
-cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x && run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x && sudo bash run.sh
 continueOrExit
 
 ###########################
@@ -165,7 +174,7 @@ continueOrExit
 
 elif [ $ch = 5 ]; then
 
-cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x && bash run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_13_x && sudo bash run.sh
 continueOrExit
 
 ###########################
@@ -174,7 +183,7 @@ continueOrExit
 
 elif [ $ch = 6 ]; then
 
-cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7 && bash run.sh
+cd $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/mobileactivationd_12_4_7 && sudo bash run.sh
 continueOrExit
 
 ###########################
