@@ -142,7 +142,8 @@ sudo cp -r tcprelay.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activ
 sudo cp -r usbmux.py $HOME/iOS-Hacktivation-Toolkit/bypass_scripts/oc34n_activation_server_13_x/
 
 # pip nstall
-pip3 install usbmuxctl
+sudo pip3 install usbmuxctl
+sudo pip3 install pyusb
 
 ###########################
 #RESTORE
